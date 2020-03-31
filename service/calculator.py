@@ -31,3 +31,20 @@ def mode(number_list):
 		mode_value = max(set(number_list), key=number_list.count)
 
 	return mode_value
+
+def stdev(number_list):
+	'''Returns the population standard deviation of number_list.'''
+	n = len(number_list)
+
+	if n == 0:
+		return 0
+
+	mu = mean(number_list)
+
+	stdev_value = 0
+	for x in number_list:
+		stdev_value += (x - mu) ** 2
+	stdev_value /= n
+	stdev_value = stdev_value ** 0.5
+
+	return stdev_value
